@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Consulta CEP</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<div class="container">
+    <h1>Consulta de CEP</h1>
+    <form th:action="@{/consulta-cep/buscar}" method="post" class="form-inline">
+        <div class="form-group mb-2">
+            <label for="cep" class="sr-only">CEP</label>
+            <input type="text" class="form-control" id="cep" name="cep" placeholder="Digite o CEP">
+        </div>
+        <button type="submit" class="btn btn-primary mb-2">Buscar</button>
+    </form>
+    <div th:if="${infCEP}">
+        <h2>Resultado:</h2>
+        <p><strong>CEP:</strong> <span th:text="${infCEP.cep}">00000-000</span></p>
+        <p><strong>Logradouro:</strong> <span th:text="${infCEP.logradouro}">Logradouro</span></p>
+        <p><strong>Bairro:</strong> <span th:text="${infCEP.bairro}">Bairro</span></p>
+        <p><strong>Cidade:</strong> <span th:text="${infCEP.localidade}">Cidade</span></p>
+        <p><strong>Estado:</strong> <span th:text="${infCEP.uf}">Estado</span></p>
+    </div>
+</div>
+</body>
+</html>
