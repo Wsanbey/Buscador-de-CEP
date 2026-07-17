@@ -15,16 +15,16 @@ API para busca e consulta de enderecos por CEP (Codigo de Enderecamento Postal).
 - ViaCEP API
 
 ## Uso
-`ash
+```bash
 GET /api/cep/{cep}
-`
+```
 
 ## Instalacao
-`ash
+```bash
 git clone https://github.com/Wsanbey/Buscador-de-CEP.git
 cd Buscador-de-CEP
 mvn install
-`
+```
 
 ## Licenca
 MIT
